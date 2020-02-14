@@ -21,6 +21,8 @@ const connection = mysql.createConnection({
   database : 'social_db' 
 });
 
+const port = process.env.PORT || 8080;
+
 // const connection = mysql.createConnection({
 //     host     : process.env.HOST,
 //     user     : process.env.USER,
@@ -48,6 +50,6 @@ app.post("/register", function(req, res){
     });
 });
 
-app.listen(8080, function(){
-    console.log("Server running on 8080!");
+app.listen(port, function(){
+    console.log("Server running on port " + port);
 });
